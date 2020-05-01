@@ -1,0 +1,21 @@
+{
+  "name": "azure-multi-region-example",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/main.js",
+  "scripts": {
+    "test": "jest",
+    "build": "rollup -c"
+  },
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.17.1",
+    "pug": "^2.0.4"
+  },
+  "devDependencies": {
+    "jest": "^25.5.3",
+    "rollup": "^2.7.6",
+    "rollup-plugin-copy": "^3.3.0"
+  }
+}
