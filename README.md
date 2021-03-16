@@ -20,3 +20,5 @@ returns
 	"isDomain": 0
 }
 ```
+
+这样从前端检测 IP 不灵，Cross-Origin Read Blocking (CORB) blocked cross-origin response

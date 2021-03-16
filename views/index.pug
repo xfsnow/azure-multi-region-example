@@ -10,7 +10,13 @@ html
     p Some values from your App Service website
     
     textarea(disabled=true, cols="30", rows=3)
-    
+
+    ul
+      li
+        code= "Client_IP: " + Client_IP
+      //- li
+      //-   code= "Client_Address: " + Client_Address
+
     ul
       li
         code= "WEBSITE_HOSTNAME: " + WEBSITE_HOSTNAME
