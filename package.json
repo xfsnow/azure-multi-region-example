@@ -6,7 +6,7 @@
   "scripts": {
     "test": "jest",
     "build": "rollup -c",
-    "start": "cd dist/;node main.js"
+    "start": "node main.js"
   },
   "author": "",
   "license": "MIT",
