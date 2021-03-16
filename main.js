@@ -10,18 +10,21 @@ const IP_API = 'http://ip-api.com/json/' //?lang=zh-CN
  * @desc 获取用户 ip 地址
  * @param {Object} req - 请求
  */
- function getClientIP(req) {
-  return req.headers['x-forwarded-for'] || // 判断是否有反向代理 IP
+function getClientIP(req) {
+   clientIp = req.headers['x-forwarded-for'] || // 判断是否有反向代理 IP
       req.connection.remoteAddress || // 判断 connection 的远程 IP
       req.socket.remoteAddress || // 判断后端的 socket 的 IP
       req.connection.socket.remoteAddress;
+  // clientIp = '139.162.86.234:16772'
+  // 上述获得的 IP 还可能带端口，裁掉
+   arr = clientIp.toString().split(':');
+   return arr[0];
 };
 
 // TODO 添加服务端处理获取客户端 IP
 app.get('/', (req,res) => {
   var clientIp = getClientIP(req)
   var Client_Address = '未知地点'
-  // clientIp = '139.162.86.234'
   console.log(clientIp);
   var url = IP_API + clientIp + '?lang=zh-CN'
   console.log(url)
