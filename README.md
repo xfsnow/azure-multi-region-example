@@ -3,7 +3,6 @@ Article link to follow.
 
 https://medium.com/codebet/multi-regional-deployment-with-azure-devops-and-azure-app-services-9be626b43947
 
-
 # Client site IP detect
 Original https://geoip-js.com/geoip/v2.1/city/me needs registration. 
 
