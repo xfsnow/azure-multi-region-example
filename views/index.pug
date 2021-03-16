@@ -1,21 +1,16 @@
 html
   head
     title= title
-    script(type='text/javascript', src='//ip.cn/api/index?ip=&type=0')
-    script(type='text/javascript').
-      window.onload = function(){geoip2.city(function(c){document.querySelector('textarea').innerHTML = "You are browsing from:\n"+ c.address + ", IP:" + c.ip + "." })}
 
   body
     h1 Azure multi region example
     p Some values from your App Service website
-    
-    textarea(disabled=true, cols="30", rows=3)
 
     ul
       li
         code= "Client_IP: " + Client_IP
-      //- li
-      //-   code= "Client_Address: " + Client_Address
+      li
+        code= "Client_Address: " + Client_Address
 
     ul
       li
