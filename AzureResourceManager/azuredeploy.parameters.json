@@ -1,0 +1,10 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "storageAccountName": {
+        // Storage Account 名字需要全局唯一，所以使用 uniqueString 来生成唯一字符串
+        "value": "[toLower(concat('armvscodeabc', uniqueString(resourceGroup().id)))]"
+       }
+    }
+}
