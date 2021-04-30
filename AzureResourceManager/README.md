@@ -6,11 +6,11 @@ az group create --name armvscode --location chinanorth2
 az deployment group create --resource-group armvscode --template-file azuredeploy.json --debug
 
 ```
-按提示输入 Storage Account 的名字，比如 arm-vscode。
+按提示输入 Storage Account 的名字，比如 armvscode。
 
 有报错时加 --debug 参数
 ```
-az deployment group create --resource-group arm-vscode --template-file azuredeploy.json --debug
+az deployment group create --resource-group armvscode --template-file azuredeploy.json --debug
 ```
 详细报错信息会在 HTTP 日志中返回，比如
 ```
@@ -27,7 +27,7 @@ arm_vscode is not a valid storage account name. Storage account name must be bet
 稍等一会，创建成功后，可以列一下看看
 
 ```
-az storage account show -n armvscode -g arm-vscode --output table
+az storage account show -n armvscode -g armvscode --output table
 ```
 
 返回
@@ -35,7 +35,7 @@ az storage account show -n armvscode -g arm-vscode --output table
 ```
 AccessTier    CreationTime                      EnableHttpsTrafficOnly    Kind       Location     Name       PrimaryLocation    ProvisioningState    ResourceGroup    StatusOfPrimary
 ------------  --------------------------------  ------------------------  ---------  -----------  ---------  -----------------  -------------------  ---------------  -----------------
-Hot           2021-04-28T09:28:13.010298+00:00  True                      StorageV2  chinanorth2  armvscode  chinanorth2        Succeeded            arm-vscode       available
+Hot           2021-04-28T09:28:13.010298+00:00  True                      StorageV2  chinanorth2  armvscode  chinanorth2        Succeeded            armvscode       available
 ```
 
 最后把整个资源组删掉。
@@ -63,3 +63,6 @@ AccessTier    CreationTime                      EnableHttpsTrafficOnly    Kind  
 Hot           2021-04-29T01:07:20.290509+00:00  True                      StorageV2  chinanorth2  armvscodeabc  chinanorth2        Succeeded            armvscode      
   available
 ``` 
+
+
+## 使用 ARM 函数
