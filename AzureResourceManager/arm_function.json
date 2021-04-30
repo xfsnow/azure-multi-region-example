@@ -12,7 +12,7 @@
         }
     },
     "variables": {
-        // 再用 uniqueString() 转换成唯一字符串
+        // 再用 uniqueString() 转换成唯一字符串，前面加上sto前缀，最后整体截取前10个字符。
          "storageName": "[substring(concat('sto', uniqueString(parameters('guidValue'))), 0, 10)]"
     },
     "resources": [{
