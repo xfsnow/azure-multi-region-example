@@ -4,6 +4,7 @@ const request = require('request')
 const app = express()
 
 const IP_API = 'http://ip-api.com/json/' //?lang=zh-CN
+// https://ipinfo.io/122.224.45.50 其它 IP 查询网站
 
 /**
  * @getClientIP
