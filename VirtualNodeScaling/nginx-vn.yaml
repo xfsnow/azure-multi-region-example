@@ -4,7 +4,7 @@ metadata:
   name: nginx-vn
   namespace: virtualnode
 spec:
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
       app: nginx-vn
@@ -19,12 +19,12 @@ spec:
         ports:
         - containerPort: 80
         resources:
-          requests:            
-            cpu: 200m          
-            memory: 32Mi       
-          limits:              
+          requests:
             cpu: 200m
-            memory: 32Mi  
+            memory: 32Mi
+          limits:
+            cpu: 200m
+            memory: 32Mi
       tolerations:
       - key: virtual-kubelet.io/provider
         value: azure
