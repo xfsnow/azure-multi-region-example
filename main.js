@@ -22,26 +22,26 @@ function getClientIP(req) {
    return arr[0];
 };
 
-// TODO 添加服务端处理获取客户端 IP
 app.get('/', (req,res) => {
-  var clientIp = getClientIP(req)
+  var Client_IP = '未知IP'
   var Client_Address = '未知地点'
-  console.log(clientIp);
-  var url = IP_API + clientIp + '?lang=zh-CN'
+  var url = IP_API + '?lang=zh-CN'
   console.log(url)
+  //处理获取客户端 IP
   request(url, function(err, response, body){
   //err 当前接口请求错误信息
   //response 一般使用statusCode来获取接口的http的执行状态
-  //body 当前接口response返回的具体数据 返回的是一个jsonString类型的数据 
+  //body 当前接口response返回的具体数据 返回的是一个jsonString类型的数据
   //需要通过JSON.parse(body)来转换
   if(!err && response.statusCode == 200){
       //todoJSON.parse(body)
-      var data = JSON.parse(body);
-      console.log(data) 
+      var data = JSON.parse(body)
+      console.log(data)
+      Client_IP = data.query
       Client_Address = data.country+' '+data.city
   }
   res.render('index.pug', {
-    Client_IP: clientIp,
+    Client_IP: Client_IP,
     Client_Address: Client_Address,
     WEBSITE_HOSTNAME: process.env.WEBSITE_HOSTNAME,
     WEBSITE_RESOURCE_GROUP: process.env.WEBSITE_RESOURCE_GROUP,
